@@ -1,8 +1,10 @@
 require('plugins')
 
 vim.cmd[[
+set termguicolors
 colorscheme nord
-nmap <C-F> :FZF<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :FZF<CR>
 ]]
 
 vim.g['lightline'] = {

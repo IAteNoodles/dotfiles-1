@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
+  indentLine = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/indentLine",
+    url = "https://github.com/Yggdroot/indentLine"
+  },
   ["lightline.vim"] = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/lightline.vim",
@@ -93,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
+  },
+  nerdtree = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
   },
   ["nnn.vim"] = {
     loaded = true,
@@ -114,6 +124,16 @@ _G.packer_plugins = {
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
   },
+  ["tokyonight-vim"] = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
+    url = "https://github.com/ghifarit53/tokyonight-vim"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -123,6 +143,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
+    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
+  },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["vim-wakatime"] = {
     loaded = true,

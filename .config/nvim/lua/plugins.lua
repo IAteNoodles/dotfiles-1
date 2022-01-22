@@ -9,6 +9,12 @@ return require('packer').startup(function()
  use 'github/copilot.vim'
  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
  use 'arcticicestudio/nord-vim'
- use 'junegunn/fzf'
  use 'sbdchd/neoformat'
+ use 'junegunn/fzf'
+ use 'sheerun/vim-polyglot'
+ use 'ghifarit53/tokyonight-vim'
+ use 'Yggdroot/indentLine'
+ use 'preservim/nerdtree'
+ use 'tiagofumo/vim-nerdtree-syntax-highlight'
+ use 'ryanoasis/vim-devicons'
 end)
