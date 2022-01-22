@@ -11,6 +11,7 @@ Plug 'github/copilot.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
