@@ -114,7 +114,6 @@ source $ZSH/oh-my-zsh.sh
 ############################################################################
 alias btw='neofetch --source /home/mazy/Documents/ascii/altarch'
 alias at='alacritty-themes'
-alias vimedit='nvim ~/.config/nvim/init.vim'
 alias grep='grep --color=auto'
 alias obsconvert='f() { ffmpeg -i "$1" -vcodec mjpeg -q:v 2 -acodec pcm_s16be -q:a 0 -f mov "$2"; unset -f f; }; f'
 alias startcam='gphoto2 --stdout --capture-movie | ffmpeg \
