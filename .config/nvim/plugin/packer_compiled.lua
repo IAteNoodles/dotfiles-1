@@ -79,10 +79,15 @@ _G.packer_plugins = {
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  fzf = {
+  ["fzf.vim"] = {
     loaded = true,
-    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/fzf",
-    url = "https://github.com/junegunn/fzf"
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
+  },
+  ["incsearch.vim"] = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/incsearch.vim",
+    url = "https://github.com/haya14busa/incsearch.vim"
   },
   indentLine = {
     loaded = true,
