@@ -127,5 +127,6 @@ alias startcam='gphoto2 --stdout --capture-movie | ffmpeg \
 '
 alias rgboff='sudo msi-rgb 0 0 0 -x'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias gotop='gotop --nvidia --color nord'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
