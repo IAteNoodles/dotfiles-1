@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
-  ["copilot.vim"] = {
-    loaded = true,
-    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
-  },
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/fzf.vim",
@@ -98,11 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/lightline.vim",
     url = "https://github.com/itchyny/lightline.vim"
-  },
-  neoformat = {
-    loaded = true,
-    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
   },
   nerdtree = {
     loaded = true,

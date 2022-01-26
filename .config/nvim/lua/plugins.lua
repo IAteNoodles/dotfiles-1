@@ -6,10 +6,8 @@ return require('packer').startup(function()
  use 'airblade/vim-gitgutter'
  use 'jiangmiao/auto-pairs'
  use 'wakatime/vim-wakatime'
- use 'github/copilot.vim'
  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
  use 'arcticicestudio/nord-vim'
- use 'sbdchd/neoformat'
  use 'junegunn/fzf.vim'
  use 'sheerun/vim-polyglot'
  use 'ghifarit53/tokyonight-vim'
