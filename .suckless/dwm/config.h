@@ -69,12 +69,15 @@ static const char	*lock[] = { "i3lock", "-c", "000000", NULL };
 static const char *discord[] = { "discord", NULL };
 static const char *audio[] = { "pavucontrol", NULL };
 static const char *files[] = { "nemo", NULL };
+static const char *keepassxc[] = { "keepassxc", NULL };
+static const char *virtmanager[] = { "virt-manager", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
- { MODKEY|ControlMask,           XK_Return, spawn,          {.v = screenshot } },
+ 
+	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = screenshot } },
  { MODKEY|ControlMask,           XK_w,      spawn,          {.v = browser } },
 	{ MODKEY|ControlMask,											XK_c,      spawn,          {.v = code } },
 	{ MODKEY|ControlMask,											XK_m,      spawn,          {.v = music } },
@@ -82,6 +85,9 @@ static Key keys[] = {
 	{	MODKEY|ControlMask,											XK_d,      spawn,          {.v = discord } },
 	{	MODKEY|ControlMask,											XK_a,      spawn,          {.v = audio } },
  { MODKEY|ControlMask,											XK_f,      spawn,          {.v = files } },
+	{ MODKEY|ControlMask,           XK_k,      spawn,          {.v = keepassxc } },
+	{ MODKEY|ControlMask,           XK_v,      spawn,          {.v = virtmanager} },
+	
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
