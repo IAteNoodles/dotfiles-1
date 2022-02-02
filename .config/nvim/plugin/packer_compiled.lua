@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["incsearch.vim"] = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/incsearch.vim",

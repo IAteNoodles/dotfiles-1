@@ -129,5 +129,6 @@ alias rgboff='sudo msi-rgb 0 0 0 -x'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias gotop='gotop --nvidia --color nord'
 alias vmnet='sudo virsh net-start default'
+alias fm6000='fm6000 -dog -c blue'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -1,3 +1,4 @@
+require('impatient').enable_profile()
 require('plugins')
 
 vim.cmd[[

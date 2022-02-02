@@ -16,4 +16,5 @@ return require('packer').startup(function()
  use 'tiagofumo/vim-nerdtree-syntax-highlight'
  use 'ryanoasis/vim-devicons'
  use 'haya14busa/incsearch.vim'
+ use 'lewis6991/impatient.nvim'
 end)
