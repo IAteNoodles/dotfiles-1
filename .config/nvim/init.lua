@@ -18,3 +18,4 @@ local set = vim.opt
 set.tabstop = 1
 set.expandtab = true
 set.shiftwidth = 1
+set.number = true
