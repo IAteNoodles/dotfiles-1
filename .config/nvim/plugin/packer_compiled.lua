@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/mazy/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
+  },
   ["presence.nvim"] = {
     loaded = true,
     path = "/home/mazy/.local/share/nvim/site/pack/packer/start/presence.nvim",

@@ -27,4 +27,7 @@ return require('packer').startup(function()
 
  -- performance
  use 'lewis6991/impatient.nvim'
+
+ --management
+ use 'wbthomason/packer.nvim'
 end)
