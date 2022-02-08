@@ -1,10 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gap pixel between windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int user_bh            = 0;        /* custom bar height */
+static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Code Regular:size=10" };
@@ -21,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -39,15 +42,31 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
+#define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
+#include "vanitygaps.c"
+
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+/* symbol     arrange function */
+ { "[]=",      tile },    /* first entry is default */
+ { "[M]",      monocle },
+ { "[@]",      spiral },
+ { "[\\]",     dwindle },
+ { "H[]",      deck },
+ { "TTT",      bstack },
+ { "===",      bstackhoriz },
+ { "HHH",      grid },
+ { "###",      nrowgrid },
+ { "---",      horizgrid },
+ { ":::",      gaplessgrid },
+ { "|M|",      centeredmaster },
+ { ">M>",      centeredfloatingmaster },
+ { "><>",      NULL },    /* no layout function means floating behavior */
+ { NULL,       NULL },
 };
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define AltMask Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -76,8 +95,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
- 
-	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = screenshot } },
+
+ { MODKEY|ControlMask,           XK_Return, spawn,          {.v = screenshot } },
  { MODKEY|ControlMask,           XK_w,      spawn,          {.v = browser } },
 	{ MODKEY|ControlMask,											XK_c,      spawn,          {.v = code } },
 	{ MODKEY|ControlMask,											XK_m,      spawn,          {.v = music } },
@@ -95,7 +114,25 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
+	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
+ { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+ { MODKEY|AltMask,              XK_u,      incrgaps,       {.i = +1 } },
+	{ MODKEY|AltMask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
+	{ MODKEY|AltMask,              XK_i,      incrigaps,      {.i = +1 } },
+	{ MODKEY|AltMask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
+	{ MODKEY|AltMask,              XK_o,      incrogaps,      {.i = +1 } },
+	{ MODKEY|AltMask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
+	{ MODKEY|AltMask,              XK_6,      incrihgaps,     {.i = +1 } },
+	{ MODKEY|AltMask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
+	{ MODKEY|AltMask,              XK_7,      incrivgaps,     {.i = +1 } },
+	{ MODKEY|AltMask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
+	{ MODKEY|AltMask,              XK_8,      incrohgaps,     {.i = +1 } },
+	{ MODKEY|AltMask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
+	{ MODKEY|AltMask,              XK_9,      incrovgaps,     {.i = +1 } },
+	{ MODKEY|AltMask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
+	{ MODKEY|AltMask,              XK_0,      togglegaps,     {0} },
+	{ MODKEY|AltMask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
